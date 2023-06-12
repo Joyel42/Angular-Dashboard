@@ -1,0 +1,390 @@
+<div class="mainbar">
+    <div class="profile-settings" id="profile-setting">
+        <div class="head">
+            <span>
+                <img class="profile-img-display" src="assets/avatar.png">
+            </span>
+            <span>
+                <h6 class="username">Mr Admin</h6>
+                <h6 style="color: gray; font-weight: 100;">Email@gmail.com</h6>
+            </span>
+        </div>
+        <div class="middlebtns">
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Profile
+            </div>
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Settings
+            </div>
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Messages
+            </div>
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Support
+            </div>
+        </div>
+        <div class="sign-out">
+            <div class="middlebtns-detail" (click)="signout()">
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+                Sign Out
+            </div>
+        </div>
+    </div>
+    <div class="main-head">
+        Table
+    </div>
+
+    <div class="table-main-container">
+
+        <div class="table-item-1">
+            <!-- <ng-template #tabledata  [ngTemplateOutlet]="tabledata">
+                <h4>Simple Table</h4>
+                <table class="table-1">
+                <tr class="th-head">  
+                    <th *ngFor="let item of jsonDataKeys">{{item}}</th>
+                </tr>
+                <ng-template [ngIf]="jsondata">
+                    <tr  *ngFor="let item of jsondata[0]">
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Price}}</td>
+                        <td>{{item.Quantity}}</td>
+                        <td>{{item.Amount}}</td>
+                    </tr>      
+                </ng-template>    
+                </table>
+            </ng-template> -->
+            <!-- <ng-container [ngTemplateOutlet]="tabledata" [ngTemplateOutletContext]="{ $implicit: jsondata }" ></ng-container> -->
+            <ng-container *ngTemplateOutlet="tabledata;context:{data:jsondata, title:'Simple Table'}"  ></ng-container>
+
+        </div>
+
+        <div class="table-item-2">
+            <!-- <h4>Hover Table</h4> -->
+            <!-- <ng-template [ngTemplateOutlet]="tabledata"></ng-template> -->
+            <!-- <ng-container [ngTemplateOutlet]="tabledata" [ngTemplateOutletContext]="{ $implicit: jsondata }" ></ng-container> -->
+            <ng-container *ngTemplateOutlet="tabledata;context:{data:jsondata, title:'Hover Table'}"  ></ng-container>
+
+
+        </div>
+
+        <div class="table-item-3">
+            <h4>Captions with icon</h4>
+            <table class="table-1">
+                <tr class="th-head">
+                <th>Name</th>
+                <th>Assigned to</th>
+                <th>Time spend</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td style="text-align: start; padding-left: 3rem;"><img src="assets/p3.png" style="width: 31px;"></td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span class="dot-progress1"></span> 
+                        <span style="font-size: x-small;color: #8B8DD9;">In Progress</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td style="text-align: start; padding-left: 3rem;"><img src="assets/p5.png" style="width: 45px;"></td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span class="dot-progress2"></span> 
+                        <span style="font-size: x-small; color: #52AB8B;">Completed</span>
+                    </div>
+                </td>                    
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td style="text-align: start; padding-left: 3rem;"><img src="assets/p6.png" style="width: 65px;"></td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span class="dot-progress3"></span> 
+                        <span style="font-size: x-small; color:#69B1D9;">Pending</span>
+                    </div>
+                </td>                    
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td style="text-align: start; padding-left: 3rem;"><img src="assets/p2.png" style="width: 31px;"></td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span class="dot-progress4"></span> 
+                        <span style="font-size: x-small; color: #FECC6B;">Approved</span>
+                    </div>
+                </td>                    
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td style="text-align: start; padding-left: 3rem;"><img src="assets/p1.png" style="width: 31px;"></td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span class="dot-progress5"></span> 
+                        <span style="font-size: x-small; color: gray;">Rejected</span>
+                    </div>
+                </td>                    
+            </tr>
+          
+            </table>
+        </div>
+
+        <div class="table-item-4">
+            <h4>Captions</h4>
+            <table class="table-1">
+                <tr class="th-head">
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td>$79.49</td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span style="font-size: x-small;background: #EDEDFF; padding: 0.3rem; border-radius: 4.5rem; color: #8B8DD9; width: 4rem;">
+                            In Progress
+                        </span>
+                    </div>
+                </td>                    
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td>$79.49</td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span style="font-size: x-small;background: #DEF8EE; padding: 0.3rem; border-radius: 4.5rem; color: #52AB8B; width: 4rem;">
+                            Completed
+                        </span>
+                    </div>
+                </td>  
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td>$79.49</td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span style="font-size: x-small;background: #E2F5FF; padding: 0.3rem; border-radius: 4.5rem; color: #69B1D9; width: 3.5rem;">
+                            Pending
+                        </span>
+                    </div>
+                </td>  
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td>$79.49</td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span style="font-size: x-small;background: #DEF8EE; padding: 0.3rem; border-radius: 4.5rem; color: #52AB8B; width: 4rem;">
+                            Completed
+                        </span>
+                    </div>
+                </td>  
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td>$79.49</td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span style="font-size: x-small;background: #EDEDFF; padding: 0.3rem; border-radius: 4.5rem; color: #8B8DD9; width: 4rem;">
+                            In Progress
+                        </span>
+                    </div>
+                </td>  
+            </tr>
+            <tr>
+                <td>ASOS Ridely High Waist</td>
+                <td>$79.49</td>
+                <td>82</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: .2rem;">
+                        <span style="font-size: x-small;background: #EDEDFF; padding: 0.3rem; border-radius: 4.5rem; color: #8B8DD9; width: 4rem;">
+                            In Progress
+                        </span>
+                    </div>
+                </td>  
+            </tr>
+            </table>
+        </div>
+
+        <div class="table-item-5">
+            <h4>Action Table</h4>
+            <table class="table-1">
+                <tr class="th-head">
+                <th>Order ID</th>
+                <th>Details</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Invoice</th>
+            </tr>
+            <tr *ngFor="let item1 of jsondata[1]">
+                <td>{{item1.Order}}</td>
+                <td style="text-align: start; padding-left: 5rem;">{{item1.Details}}</td>
+                <td style="text-align: start; padding-left: 10rem; display: flex; align-items: center; width: 100%; gap:.3rem;">
+                    <span class="material-symbols-outlined" style="color: gray;">
+                    schedule
+                    </span>
+                    Nov 24, 2022 
+                </td>                        <td>$79.49</td>
+                <td><span class="material-symbols-outlined">
+                    download
+                    </span>
+                </td>
+            </tr>
+            </table>
+        </div>
+
+        <div class="table-item-6">
+            <h4>Checkboxes</h4>
+            <table class="table-1">
+                <tr class="th-head">
+                <th style="    display: flex; gap: 1rem;">
+                    <input type="checkbox" name="order" id="maincheck" (click)="selectoptions()">
+                    Order ID
+                </th>
+                <th>Email</th>
+                <th>Registration Date</th>
+            </tr>
+            <tr>
+                <td style="display: flex; align-items: center; justify-content: flex-start; gap: 1rem; ">
+                    <input type="checkbox" name="order" id="" class="checkboxes" (click)="deselectoptions()">
+                    <span style="display: flex; align-items: center; gap: .2rem;">
+                        <img src="assets/p1.png" style="width: 30px;">
+                        <span>Kate</span> 
+                    </span>
+                 </td>
+                 <td style="text-align: left; padding-left: 10.5rem;">smith@kmpg.com</td>
+                 <td >
+                    <span class="material-symbols-outlined" style="color: gray;">
+                        date_range
+                        </span>
+                    Today, 19:40 
+                </td>  
+            </tr>
+            <tr>
+                <td style="display: flex; align-items: center; justify-content: flex-start; gap: 1rem; ">
+                    <input type="checkbox" name="order" id="" class="checkboxes" (click)="deselectoptions()">
+                    <span style="display: flex; align-items: center; gap: .2rem;">
+                        <img src="assets/p1.png" style="width: 30px;">
+                        <span>Kate</span> 
+                    </span>
+                 </td>
+                 <td style="text-align: left; padding-left: 10.5rem;">smith@kmpg.com</td>
+                 <td >
+                    <span class="material-symbols-outlined" style="color: gray;">
+                        date_range
+                        </span>
+                    Today, 19:40 
+                </td>                      
+            </tr>
+            <tr>
+                <td style="display: flex; align-items: center; justify-content: flex-start; gap: 1rem;">
+                    <input type="checkbox" name="order" id="" class="checkboxes" (click)="deselectoptions()">
+                    <span style="display: flex; align-items: center; gap: .2rem;">
+                        <img src="assets/p1.png" style="width: 30px;">
+                        <span>Kate</span> 
+                    </span>
+                 </td>
+                 <td style="text-align: left; padding-left: 10.5rem;">smith@kmpg.com</td>
+                 <td >
+                    <span class="material-symbols-outlined" style="color: gray;">
+                        date_range
+                        </span>
+                    Today, 19:40 
+                </td>                      
+            </tr>
+            <tr>
+                <td style="display: flex; align-items: center; justify-content: flex-start; gap: 1rem;">
+                    <input type="checkbox" name="order" id="" class="checkboxes" (click)="deselectoptions()">
+                    <span style="display: flex; align-items: center; gap: .2rem;">
+                        <img src="assets/p1.png" style="width: 30px;">
+                        <span>Kate</span> 
+                    </span>
+                 </td>
+                 <td style="text-align: left; padding-left: 10.5rem;">smith@kmpg.com</td>
+                 <td >
+                    <span class="material-symbols-outlined" style="color: gray;">
+                        date_range
+                        </span>
+                    Today, 19:40 
+                </td>                      
+            </tr>
+            <tr>
+                <td style="display: flex; align-items: center; justify-content: flex-start; gap: 1rem;">
+                    <input type="checkbox" name="order" id="" class="checkboxes" (click)="deselectoptions()">
+                    <span style="display: flex; align-items: center; gap: .2rem;">
+                        <img src="assets/p1.png" style="width: 30px;">
+                        <span>Kate</span> 
+                    </span>
+                 </td>
+                 <td style="text-align: left; padding-left: 10.5rem;">smith@kmpg.com</td>
+                 <td >
+                    <span class="material-symbols-outlined" style="color: gray;">
+                        date_range
+                        </span>
+                    Today, 19:40 
+                </td>                      
+            </tr>
+            <tr>
+                <td style="display: flex; align-items: center; justify-content: flex-start; gap: 1rem;">
+                    <input type="checkbox" name="order" id="" class="checkboxes" (click)="deselectoptions()">
+                    <span style="display: flex; align-items: center; gap: .2rem;">
+                        <img src="assets/p1.png" style="width: 30px;">
+                        <span>Kate</span> 
+                    </span>
+                 </td>
+                 <td style="text-align: left; padding-left: 10.5rem; ">smith@kmpg.com</td>
+                 <td >
+                    <span class="material-symbols-outlined" style="color: gray;">
+                        date_range
+                        </span>
+                    Today, 19:40 
+                </td>                      
+            </tr>
+            </table>
+        </div>
+        
+    </div>
+    <ng-template #tabledata  let-data="data" let-title="title" >
+        <!-- <h4>Simple Table</h4> -->
+        <h4>{{title}}</h4>
+        <table class="table-1">
+        <tr class="th-head">  
+            <th *ngFor="let item of jsonDataKeys">{{item}}</th>
+        </tr>
+        <ng-template [ngIf]="data">
+            <tr  *ngFor="let item of data[0]">
+                <td>{{item.Name}}</td>
+                <td>{{item.Price}}</td>
+                <td>{{item.Quantity}}</td>
+                <td>{{item.Amount}}</td>
+            </tr>      
+        </ng-template>    
+        </table>
+    </ng-template>

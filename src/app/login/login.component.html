@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+<div class="container">
+    <div class="login-container">
+        <div >
+            <h1>Batum<span><i class="fa-solid fa-circle" style="color: rgb(53, 168, 53); font-size: x-small;"></i></span></h1>
+        </div>
+        <form class="login-container" style="padding: 0;" [formGroup]="loginform" (ngSubmit)="submitform()">
+        <div class="inputdiv">
+            <input type="text" placeholder="Enter Username" formControlName="email">
+            <div class="error-head" *ngIf="(email.invalid) && (email.touched) ">
+                <div class="error-fields" *ngIf="email.errors?.['required']"> Email is Required!!</div>
+                <div class="error-fields" *ngIf="email.errors?.['email']"> Email is Invalid!! </div>
+        </div>
+            <br>
+            <input type="password" placeholder="Enter Password" formControlName="password">
+            <div class="error-fields" *ngIf="password.errors?.['required'] && password.touched">Fill this field!!</div>
+            <br>
+        </div>
+        <div class="login-options">
+            <span><input type="radio"> Remember me</span>
+            <span style="color: black;">Forgot password?</span>
+        </div>
+        <div>
+            <button type="submit" class="btn" [disabled]="loginform.invalid">Login</button>
+        </div>
+        </form>
+        <div>
+         <hr><span>OR LOGIN WITH</span><hr>
+        </div>
+        <div>
+            <span><i class="fa-brands fa-google" style="cursor: pointer;"></i></span>&nbsp;&nbsp;
+            <span><i class="fa-brands fa-facebook-f" style="cursor: pointer;"></i></span>&nbsp;&nbsp;
+            <span><i class="fa-brands fa-twitter" style="cursor: pointer;"></i></span>&nbsp;&nbsp;
+            <span><i class="fa-brands fa-linkedin-in" style="cursor: pointer;"></i></span>&nbsp;&nbsp;
+        </div>
+        <div>
+            Not a member? <u><b style="color: black; cursor: pointer;" [routerLink]="['/register']">Sign up</b></u>
+        </div>
+    </div>
+</div>

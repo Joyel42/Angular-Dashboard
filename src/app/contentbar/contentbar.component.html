@@ -1,0 +1,179 @@
+<div class="mainbar">
+    <div class="profile-settings" id="profile-setting">
+        <div class="head">
+            <span>
+                <img class="profile-img-display" src="assets/avatar.png" style="border-radius: 10rem; width: 1.4rem; height: 1.4rem;">
+            </span>
+            <span>
+                <h6 class="username">Mr Admin</h6>
+                <h6 style="color: gray; font-weight: 100;">Email@gmail.com</h6>
+            </span>
+        </div>
+        <div class="middlebtns">
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Profile
+            </div>
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Settings
+            </div>
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Messages
+            </div>
+            <div class="middlebtns-detail">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Support
+            </div>
+        </div>
+        <div class="sign-out">
+            <div class="middlebtns-detail" (click)="signout()">
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+                Sign Out
+            </div>
+        </div>
+    </div>
+    <div class="main-head">
+        Today<span class="material-symbols-outlined">
+            expand_more
+        </span>
+    </div>
+    <div class="main-item-container">
+        <div class="item1-1">
+            <span class="item-head-1">
+                Views
+            </span>
+            <span class="item-bottom">
+                <span>
+                    <h2>721K</h2>
+                </span>
+                <span class="item-bottom-right">
+                    +11.01% <span class="material-symbols-outlined">
+                        trending_up
+                    </span>
+                </span>
+            </span>
+        </div>
+
+        <div class="item1-2">
+            <span class="item-head-1">
+                Visits
+            </span>
+            <span class="item-bottom">
+                <span>
+                    <h2>367K</h2>
+                </span>
+                <span class="item-bottom-right">
+                    +11.01% <span class="material-symbols-outlined">
+                        trending_up
+                    </span>
+                </span>
+            </span>
+        </div>
+
+        <div class="item1-3">
+            <span class="item-head-1">
+                New Users
+            </span>
+            <span class="item-bottom">
+                <span>
+                    <h2>1,156</h2>
+                </span>
+                <span class="item-bottom-right">
+                    +11.01% <span class="material-symbols-outlined">
+                        trending_down
+                    </span>
+                </span>
+            </span>
+        </div>
+
+        <div class="item1-4">
+            <span class="item-head-1">
+                Active Users
+            </span>
+            <span class="item-bottom">
+                <span>
+                    <h2>239</h2>
+                </span>
+                <span class="item-bottom-right">
+                    +11.01% <span class="material-symbols-outlined">
+                        trending_down
+                    </span>
+                </span>
+            </span>
+        </div>
+        <div class="item2-1">
+            <div class="item2-1-headers">
+            <h5 style="font-size: 0.8rem;">Total Users</h5>
+            <h5 style="font-size: 0.8rem; color: gray;">Total Projects</h5>
+            <h5 style="font-size: 0.8rem; color: gray;">Operating Staus</h5>
+            <h5 style="font-size: 0.8rem;">|</h5>
+            <ul style="display: flex; margin: 0; padding: 0; color: #ADC8DB;">
+               <li><h5 style="font-size: 0.8rem; color: #414141;">Current Week</h5></li>
+            </ul>      
+            <ul style="display: flex; margin: 0; padding: 0; color: #1C1C1C;">
+                <li><h5 style="font-size: 0.8rem; color: #414141;">Previous Week</h5></li>
+             </ul>
+            </div>
+            <div class="chart-area1">
+                <canvas id="myChart3"></canvas>
+            </div>
+        </div>
+        <div class="item2-2">
+            <div class="social-items">
+                <div class="social-head">
+                    <h5 style="font-size: 0.8rem;">Traffic by Website</h5>
+                </div>
+                <div class="social-media">
+                    <span class="items">Google
+                        <input type="range" min="1" max="100" class="slider no1" id="myRange">
+                    </span>
+                    <span class="items">YouTube
+                        <input type="range" min="1" max="100" class="slider no2" id="myRange">
+                    </span>
+                    <span class="items">
+                        <span>Instagram </span>
+                        <input type="range" min="1" max="100" class="slider no3" id="myRange">
+                    </span>
+                    <span class="items">Pintrest
+                        <input type="range" min="1" max="100" class="slider no4" id="myRange">
+                    </span>
+                    <span class="items">Facebook
+                        <input type="range" min="1" max="100" class="slider no5" id="myRange">
+                    </span>
+                    <span class="items">Twitter
+                        <input type="range" min="1" max="100" class="slider no6" id="myRange">
+                    </span>
+                    <span class="items">Tumbler
+                        <input type="range" min="1" max="10" class="slider no7" id="myRange">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item3-1">
+            <h5 style="font-size: 0.8rem;">Traffic by Device</h5>
+            <div class="chart-area">
+            <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+
+        <div class="item3-2">
+            <h5 style="font-size: 0.8rem;">Traffic by Location</h5>
+            <div class="chart-area">
+                <canvas id="myChart1"></canvas>
+            </div>
+        </div>
+
+    </div>
+</div>

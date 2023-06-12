@@ -1,0 +1,94 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    padding: 0 1rem 0 2rem;
+    height: 100%;
+}
+
+input {
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border-radius: 0;
+    background: none;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 13px;
+    font-family: Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+
+.material-symbols-outlined {
+    font-size: 1.2rem;
+}
+
+.three {
+    font-size: .9rem;
+    display: flex;
+}
+
+.head1 {
+    margin: 0;
+    color: grey;
+}
+
+.head2 {
+    margin: 0;
+}
+
+.head-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 5;
+    gap: .8rem;
+}
+
+.head-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 5;
+    gap: .8rem;
+}
+
+.searchicon {
+    padding: .4rem;
+    width: 9rem;
+    border-radius: .5rem;
+    border: 2px solid #f3f3f3;
+    background-color: #f3f3f3;
+    height: 2rem;
+}
+
+.dot {
+    position: absolute;
+    border-radius: 1rem;
+    width: .4rem;
+    height: .4rem;
+    right: .2rem;
+    top: .1rem;
+    background-color: black;
+}
+
+.profile-img-display {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 10rem;
+}
+
+.profile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+    cursor: pointer;
+}
+
+.username {
+    margin: 0%;
+    font-size: .9rem;
+    font-weight: 100;
+}
