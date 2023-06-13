@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -32,6 +32,8 @@ export class LoginComponent  {
       console.log("Authenticated Successfully :"+ data.success);
       if(data.success === true){
         this.loginservice.changeflag();
+        window.localStorage.setItem("loginflag","true");
+        this.router.navigate(['/dashboard']);
       }
       this.loginservice.decodedjwt(data.results);
     })      

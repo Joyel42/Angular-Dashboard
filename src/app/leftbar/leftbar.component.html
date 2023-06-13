@@ -4,7 +4,7 @@
     </div>
     <div class="sidebar-option-1">
         <span>
-            <button class="primary-btns active" [routerLink]="''" id="dashboardbtn">
+            <button class="primary-btns active" [routerLink]="'dashboard'" id="dashboardbtn">
                  <span
                     class="material-symbols-outlined" id="iconchanger" (click)="collapseopt()">
                     navigate_next
@@ -74,7 +74,7 @@
             </span> Drag & Drop
         </button>
         <button class="primary-btns option-description">Tables and Forms</button>
-            <button class="primary-btns" [routerLink]="'table'" id="tablebtn" (click)="changeactive()">
+            <button class="primary-btns" [routerLink]="['table']" id="tablebtn" (click)="changeactive()">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="material-symbols-outlined">
                     <span class="material-symbols-outlined">

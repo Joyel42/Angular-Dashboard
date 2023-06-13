@@ -6,11 +6,12 @@ import { ContentbarComponent } from './contentbar/contentbar.component';
 import { TablesComponent } from './tables/tables.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },  
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
+  {path:"dashboard", component:ContentbarComponent},
   {path:"", component:ContentbarComponent},
   {path:"table",component:TablesComponent}
-
 ];
 
 @NgModule({

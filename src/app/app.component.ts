@@ -1,6 +1,5 @@
 import { Component , OnInit} from '@angular/core';
 import { LoginService } from './login.service';
-import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +14,14 @@ export class AppComponent implements OnInit{
   isLogedIn:boolean=false;
 
   ngOnInit(): void {
+    var a= localStorage.getItem("loginflag");    
+    this.isLogedIn = (a === "true");
+    console.log("localStorage value :" ,this.isLogedIn);
     this.isLogedIn = this.loginService.getflag();
-    if (this.isLogedIn == true){
-    }
-    
   }
 
   simplecheck(){
-    console.log(this.isLogedIn);
+    console.log("Yoo Mic checking.....",this.isLogedIn);
   }
 
 }

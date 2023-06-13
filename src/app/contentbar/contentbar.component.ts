@@ -13,6 +13,7 @@ export class ContentbarComponent {
 
   signout(){
     this.loginService.changeflag();
+    window.localStorage.setItem("loginflag","false")
   }
 
   ngOnInit(): void {

@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { RightbarComponent } from './rightbar/rightbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginService } from './login.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginService } from './login.service';
     LoginComponent,
     RegisterComponent,
     RightbarComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

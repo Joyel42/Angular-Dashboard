@@ -5,11 +5,17 @@ import jwt_decode from "jwt-decode";
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService{
+export class LoginService implements OnInit{
+
   constructor(private httpclient:HttpClient){}
   
   api = 'http://testvedika.atai.ai/api/login/';
   isLogined:boolean=false;
+
+  ngOnInit(): void {
+    var a= localStorage.getItem("loginflag");    
+    this.isLogined = (a === "true");
+  }
 
   apiresponse(logindetails):Observable<any>{
     return this.httpclient.post(this.api,logindetails);
