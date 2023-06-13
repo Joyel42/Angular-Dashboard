@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../login.service';
 import { Chart,registerables } from 'chart.js';
+import { Router } from '@angular/router';
 Chart.register(...registerables);
 
 @Component({
@@ -9,11 +10,12 @@ Chart.register(...registerables);
   styleUrls: ['./contentbar.component.css']
 })
 export class ContentbarComponent {
-  constructor(private loginService:LoginService){}
+  constructor(private loginService:LoginService, private router:Router){}
 
   signout(){
     this.loginService.changeflag();
-    window.localStorage.setItem("loginflag","false")
+    window.localStorage.setItem("loginflag","false");
+    this.router.navigate(["'/login'"]);
   }
 
   ngOnInit(): void {

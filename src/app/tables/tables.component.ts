@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../login.service';
 import tabledatas from './test.json';  
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tables',
@@ -8,10 +9,13 @@ import tabledatas from './test.json';
   styleUrls: ['./tables.component.css']
 })
 export class TablesComponent {
-constructor(private loginService:LoginService){}
-  signout(){
-    this.loginService.changeflag();
-  }
+constructor(private loginService:LoginService, private router:Router){}
+
+signout(){
+  this.loginService.changeflag();
+  window.localStorage.setItem("loginflag","false");
+  this.router.navigate(["'/login'"]);
+}
 
   jsondata:any = tabledatas;
   jsonDataKeys : any;

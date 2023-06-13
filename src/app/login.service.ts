@@ -2,19 +2,22 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from "rxjs";
 import jwt_decode from "jwt-decode";
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService implements OnInit{
 
-  constructor(private httpclient:HttpClient){}
+  constructor(private httpclient:HttpClient, private router:Router){}
   
   api = 'http://testvedika.atai.ai/api/login/';
   isLogined:boolean=false;
 
   ngOnInit(): void {
-    var a= localStorage.getItem("loginflag");    
-    this.isLogined = (a === "true");
+    var a= localStorage.getItem("loginflag");  
+    if(a == "true"){ 
+      this.isLogined = true;
+    }
   }
 
   apiresponse(logindetails):Observable<any>{
@@ -34,6 +37,13 @@ export class LoginService implements OnInit{
   }
 
   getflag(){
+    var a= localStorage.getItem("loginflag");  
+    if(a == "true"){ 
+      this.isLogined = true;
+    }
+    else{
+      this.router.navigate(["'/login'"]);
+    }
     console.log("getflag is called ......",this.isLogined);
     return this.isLogined;
   }
