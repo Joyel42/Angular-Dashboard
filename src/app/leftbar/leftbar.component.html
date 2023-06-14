@@ -4,9 +4,9 @@
     </div>
     <div class="sidebar-option-1">
         <span>
-            <button class="primary-btns active" [routerLink]="'dashboard'" id="dashboardbtn">
+            <button class="primary-btns active" [routerLink]="'dashboard'" (click)="collapseopt()" id="dashboardbtn" title="Dashboard">
                  <span
-                    class="material-symbols-outlined" id="iconchanger" (click)="collapseopt()">
+                    class="material-symbols-outlined" id="iconchanger">
                     navigate_next
                  </span>
                     <img src="assets/fa-solid_chart-pie.svg" class="icon">Dashboard</button> 
@@ -74,7 +74,7 @@
             </span> Drag & Drop
         </button>
         <button class="primary-btns option-description">Tables and Forms</button>
-            <button class="primary-btns" [routerLink]="['table']" id="tablebtn" (click)="changeactive()">
+            <button class="primary-btns" [routerLink]="['table']" id="tablebtn" (click)="changeactive()" title="Tables">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="material-symbols-outlined">
                     <span class="material-symbols-outlined">

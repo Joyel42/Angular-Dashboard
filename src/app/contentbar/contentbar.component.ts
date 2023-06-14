@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from '../login.service';
 import { Chart,registerables } from 'chart.js';
 import { Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
 Chart.register(...registerables);
 
 @Component({
@@ -13,10 +14,14 @@ export class ContentbarComponent {
   constructor(private loginService:LoginService, private router:Router){}
 
   signout(){
-    this.loginService.changeflag();
     window.localStorage.setItem("loginflag","false");
-    this.router.navigate(["'/login'"]);
+    window.localStorage.clear();
+    this.loginService.changeflag();
+    this.router.navigate(['/login']);
   }
+
+  name:string = "";
+  email:string = '';
 
   ngOnInit(): void {
     var myChart = new Chart("myChart1", {
@@ -152,5 +157,10 @@ export class ContentbarComponent {
         }
     }
   });
+
+  var a = window.localStorage.getItem("jwt");
+  var b = JSON.parse(a);
+  this.name = b.emp_name;
+  this.email = b.email;
   }
 }

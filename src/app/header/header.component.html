@@ -1,6 +1,6 @@
 <div class="header">
     <div class="head-left">
-        <span class="material-symbols-outlined one" (click)="collapsesidebar();" style="cursor: pointer;">
+        <span class="material-symbols-outlined one" (click)="collapsesidebar();" style="cursor: pointer;"  id="sidebarbtn">
             dock_to_right
         </span>
         <span class="material-symbols-outlined two">
@@ -24,8 +24,8 @@
         </span>
         <span class="profile-icon" (click)="settings();">
             <img class="profile-img-display" src="assets/avatar.png">
-            <h6 class="username">Mr Admin</h6>
-            <span class="material-symbols-outlined" id="iconchange">
+            <h6 class="username">{{name}}</h6>
+            <span class="material-symbols-outlined" id="iconchange" title="Profile Settings">
                 expand_more
             </span>
         </span>

@@ -1,2 +1,2 @@
-<app-login *ngIf="!loginService.isLogined"></app-login>
+<router-outlet *ngIf="!loginService.isLogined"></router-outlet>
 <app-dashboard *ngIf="loginService.isLogined"></app-dashboard>

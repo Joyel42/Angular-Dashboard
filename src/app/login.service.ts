@@ -28,6 +28,8 @@ export class LoginService implements OnInit{
   var token:any = Object.values(tkn);
   var decodedjwt = jwt_decode(token[0]);
   console.log("Decoded JWT Token = ", decodedjwt);
+  window.localStorage.setItem("jwt",JSON.stringify(decodedjwt));
+
   }
 
   changeflag(){
@@ -40,9 +42,6 @@ export class LoginService implements OnInit{
     var a= localStorage.getItem("loginflag");  
     if(a == "true"){ 
       this.isLogined = true;
-    }
-    else{
-      this.router.navigate(["'/login'"]);
     }
     console.log("getflag is called ......",this.isLogined);
     return this.isLogined;

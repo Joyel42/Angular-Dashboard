@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+
+  name:string = "";
+
+  ngOnInit(): void {
+    var a = window.localStorage.getItem("jwt");
+    var b = JSON.parse(a);
+    this.name = b.emp_name;
+    document.getElementById("sidebarbtn").setAttribute("title","Hide Sidebar");
+  }
 
   isSidebarVisible:boolean = false;
   settingsopened:boolean = false;
+
 
   collapsesidebar():void{
     var sidebar:any;
@@ -21,10 +31,14 @@ export class HeaderComponent {
       sidebar.style.display = "none";
       grid.style.gridTemplateColumns = "0 auto 12rem ";
       this.isSidebarVisible = true;
+      document.getElementById("sidebarbtn").removeAttribute("title");
+      document.getElementById("sidebarbtn").setAttribute("title","Show Sidebar");
     } else {
       sidebar.style.display = "flex";
       grid.style.gridTemplateColumns = "12rem auto 12rem ";
       this.isSidebarVisible = false;
+      document.getElementById("sidebarbtn").removeAttribute("title");
+      document.getElementById("sidebarbtn").setAttribute("title","Hide Sidebar");
     }
   }
 

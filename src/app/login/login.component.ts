@@ -33,6 +33,7 @@ export class LoginComponent  {
       if(data.success === true){
         this.loginservice.changeflag();
         window.localStorage.setItem("loginflag","true");
+        window.localStorage.setItem("token",data.results.token);
         this.router.navigate(['/dashboard']);
       }
       this.loginservice.decodedjwt(data.results);

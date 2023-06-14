@@ -19,8 +19,15 @@ signout(){
 
   jsondata:any = tabledatas;
   jsonDataKeys : any;
+  name:string = "";
+  email:string = '';
+
   ngOnInit(): void {
       this.jsonDataKeys = Object.keys(this.jsondata[0][0]);
+      var a = window.localStorage.getItem("jwt");
+      var b = JSON.parse(a);
+      this.name = b.emp_name;
+      this.email = b.email;
   }
 
   maincheck:any;
