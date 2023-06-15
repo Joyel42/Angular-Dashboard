@@ -1,2 +1,11 @@
 <router-outlet *ngIf="!loginService.isLogined"></router-outlet>
-<app-dashboard *ngIf="loginService.isLogined"></app-dashboard>
+<!-- <app-dashboard *ngIf="loginService.isLogined"></app-dashboard> -->
+<div class="dashboard" id="grid" *ngIf="loginService.isLogined">
+    <app-leftbar></app-leftbar>
+    <app-header></app-header>
+    <app-rightbar></app-rightbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  </div>

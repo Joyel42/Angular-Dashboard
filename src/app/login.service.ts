@@ -28,7 +28,6 @@ export class LoginService {
 
   changeflag(){
     this.isLogined = !this.isLogined;
-    console.log(this.isLogined);
     this.getflag();
   }
 
@@ -37,7 +36,6 @@ export class LoginService {
     if(a == "true"){ 
       this.isLogined = true;
     }
-    console.log("getflag is called ......",this.isLogined);
     return this.isLogined;
   }
 }

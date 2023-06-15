@@ -16,12 +16,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     var a= localStorage.getItem("loginflag");    
     this.isLogedIn = (a === "true");
-    console.log("localStorage value :" ,this.isLogedIn);
+    console.log("User Already Logined:" ,this.isLogedIn);
     this.isLogedIn = this.loginService.getflag();
-  }
-
-  simplecheck(){
-    console.log("Yoo Mic checking.....",this.isLogedIn);
   }
 
 }

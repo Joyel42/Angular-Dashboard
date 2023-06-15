@@ -13,7 +13,6 @@ import { RegisterComponent } from './register/register.component';
 import { RightbarComponent } from './rightbar/rightbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginService } from './login.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { AuthInterceptor } from './auth.interceptor';
     RegisterComponent,
     RightbarComponent,
     FooterComponent,
-    DashboardComponent
   ],
   imports: [
     BrowserModule,
