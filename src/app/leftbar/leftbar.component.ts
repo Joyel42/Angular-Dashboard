@@ -19,10 +19,11 @@ constructor(public loginService:LoginService){}
     }
     else{
       this.collapsed = true;
-      }
+    }
   }
 
   changeactive():void{
     this.collapsed = false;  
   }
+
 }
