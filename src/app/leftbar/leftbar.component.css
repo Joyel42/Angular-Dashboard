@@ -28,7 +28,7 @@
 
 .sidebar-options-1 {
     padding-top: .3rem;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: .5rem;
 }
@@ -46,17 +46,20 @@
     padding: .2rem;
 }
 
-.active {
+.primary-btns:focus {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    height: 1.8rem;
+    border-radius: .4rem;
+    gap: .2rem;
+    padding: .2rem;
     background-color: #e0e0e0;
     border: 1px solid #f3f3f3;
     border-radius: .4rem;
 }
 
-.active {
-    background-color: #e0e0e0;
-    border: 1px solid #f3f3f3;
-    border-radius: .4rem;
-}
 
 .active1 {
     background-color: #e0e0e0 !important;

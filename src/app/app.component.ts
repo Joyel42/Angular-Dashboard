@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit, Output} from '@angular/core';
 import { LoginService } from './login.service';
 
 @Component({
@@ -11,8 +11,8 @@ export class AppComponent implements OnInit{
 
   constructor(public loginService:LoginService){}
 
-  isLogedIn:boolean=false;
-
+  isLogedIn:boolean = false;
+  
   ngOnInit(): void {
     var a= localStorage.getItem("loginflag");    
     this.isLogedIn = (a === "true");

@@ -14,6 +14,7 @@ import { RightbarComponent } from './rightbar/rightbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginService } from './login.service';
 import { AuthInterceptor } from './auth.interceptor';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AuthInterceptor } from './auth.interceptor';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [
     LoginService,

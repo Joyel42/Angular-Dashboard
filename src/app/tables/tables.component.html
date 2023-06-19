@@ -1,8 +1,8 @@
 <div class="mainbar">
-    <div class="profile-settings" id="profile-setting">
+    <div class="profile-settings" id="profile-setting" *ngIf="!loginService.settingsopened" >
         <div class="head">
             <span>
-                <img class="profile-img-display" src="assets/avatar.png">
+                <img class="profile-img-display" src="assets/avatar.png" style="border-radius: 10rem; width: 1.4rem; height: 1.4rem;">
             </span>
             <span>
                 <h6 class="username">{{name}}</h6>
@@ -51,31 +51,11 @@
     <div class="table-main-container">
 
         <div class="table-item-1">
-            <!-- <ng-template #tabledata  [ngTemplateOutlet]="tabledata">
-                <h4>Simple Table</h4>
-                <table class="table-1">
-                <tr class="th-head">  
-                    <th *ngFor="let item of jsonDataKeys">{{item}}</th>
-                </tr>
-                <ng-template [ngIf]="jsondata">
-                    <tr  *ngFor="let item of jsondata[0]">
-                        <td>{{item.Name}}</td>
-                        <td>{{item.Price}}</td>
-                        <td>{{item.Quantity}}</td>
-                        <td>{{item.Amount}}</td>
-                    </tr>      
-                </ng-template>    
-                </table>
-            </ng-template> -->
-            <!-- <ng-container [ngTemplateOutlet]="tabledata" [ngTemplateOutletContext]="{ $implicit: jsondata }" ></ng-container> -->
             <ng-container *ngTemplateOutlet="tabledata;context:{data:jsondata, title:'Simple Table'}"  ></ng-container>
 
         </div>
 
         <div class="table-item-2">
-            <!-- <h4>Hover Table</h4> -->
-            <!-- <ng-template [ngTemplateOutlet]="tabledata"></ng-template> -->
-            <!-- <ng-container [ngTemplateOutlet]="tabledata" [ngTemplateOutletContext]="{ $implicit: jsondata }" ></ng-container> -->
             <ng-container *ngTemplateOutlet="tabledata;context:{data:jsondata, title:'Hover Table'}"  ></ng-container>
 
 
@@ -372,7 +352,6 @@
         
     </div>
     <ng-template #tabledata  let-data="data" let-title="title" >
-        <!-- <h4>Simple Table</h4> -->
         <h4>{{title}}</h4>
         <table class="table-1">
         <tr class="th-head">  

@@ -1,7 +1,7 @@
 <router-outlet *ngIf="!loginService.isLogined"></router-outlet>
 <!-- <app-dashboard *ngIf="loginService.isLogined"></app-dashboard> -->
-<div class="dashboard" id="grid" *ngIf="loginService.isLogined">
-    <app-leftbar></app-leftbar>
+<div class="dashboard" id="grid" *ngIf="loginService.isLogined" [style.grid-template-columns]="loginService.isSidebarNotVisible? '0 auto 12rem' : '12rem auto 12rem'">
+    <app-leftbar ></app-leftbar>
     <app-header></app-header>
     <app-rightbar></app-rightbar>
     <main>

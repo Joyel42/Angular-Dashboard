@@ -10,6 +10,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
+
+  serverresponse:string='';
     
   loginform = new FormGroup({
       email: new FormControl('',[Validators.required,Validators.email]),
@@ -29,7 +31,8 @@ export class LoginComponent  {
   submitform(){
     this.loginservice.apiresponse(this.loginform.value)
     .subscribe(data => {
-      console.log("Authenticated Successfully :"+ data.success);
+      console.log("Authenticated Successfully :"+ data.statusText);
+      this.serverresponse = '';
       if(data.success === true){
         this.loginservice.changeflag();
         window.localStorage.setItem("loginflag","true");
@@ -37,7 +40,11 @@ export class LoginComponent  {
         this.router.navigate(['/dashboard']);
       }
       this.loginservice.decodedjwt(data.results);
-    })      
+    }, 
+    error =>{
+      this.serverresponse = error.statusText;
+    }
+    )
   }
 
 

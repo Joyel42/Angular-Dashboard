@@ -7,11 +7,10 @@ import { TablesComponent } from './tables/tables.component';
 import { LoginGuard, LoginGuard2 } from './login.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},  
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},  
   {path:"login", component:LoginComponent, canActivate:[LoginGuard2]},
   {path:"register", component:RegisterComponent,canActivate:[LoginGuard2]},
   {path:"dashboard", component:ContentbarComponent, canActivate:[LoginGuard]},
-  {path:"", component:ContentbarComponent, canActivate:[LoginGuard]},
   {path:"table",component:TablesComponent, canActivate:[LoginGuard]}
 ];
 

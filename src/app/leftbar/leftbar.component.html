@@ -1,16 +1,15 @@
-<div class="leftbar" id="leftsidebar">
+<div class="leftbar" id="leftsidebar" *ngIf="!loginService.isSidebarNotVisible">
     <div class="logo-div">
         <img src="assets/Group 14.svg" class="side-logo">
     </div>
     <div class="sidebar-option-1">
         <span>
-            <button class="primary-btns active" [routerLink]="'dashboard'" (click)="collapseopt()" id="dashboardbtn" title="Dashboard">
-                 <span
-                    class="material-symbols-outlined" id="iconchanger">
+            <button [routerLink]="'dashboard'" (click)="collapseopt()" id="dashboardbtn" title="Dashboard" class="primary-btns" autofocus>
+                 <span class="material-symbols-outlined">
                     navigate_next
                  </span>
                     <img src="assets/fa-solid_chart-pie.svg" class="icon">Dashboard</button> 
-            <div class="sidebar-options-1" id="collapseoptions">
+            <div class="sidebar-options-1" id="collapseoptions" *ngIf="collapsed">
                 <button class="secondary-btns active1" id="defaultbtn">
                     Default
                 </button>

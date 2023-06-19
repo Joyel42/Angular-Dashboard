@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./tables.component.css']
 })
 export class TablesComponent {
-constructor(private loginService:LoginService, private router:Router){}
+tex: any;
+constructor(public loginService:LoginService, private router:Router){}
 
 signout(){
   this.loginService.changeflag();

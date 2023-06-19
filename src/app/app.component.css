@@ -10,7 +10,6 @@
     "leftbar header rightbar"
     "leftbar main rightbar"
     "leftbar footer rightbar";
-    grid-template-columns: 12rem auto 12rem;
     grid-template-rows: 4.3rem auto 2rem;
 }
 

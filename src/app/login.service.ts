@@ -11,8 +11,12 @@ export class LoginService {
   constructor(private httpclient:HttpClient){}
   
   api = 'http://testvedika.atai.ai/api/login/';
-  isLogined:boolean=false;
 
+  isLogined:boolean=false;
+  
+  isSidebarNotVisible:boolean = false;
+
+  settingsopened:boolean = true;
 
   apiresponse(logindetails):Observable<any>{
     return this.httpclient.post(this.api,logindetails);

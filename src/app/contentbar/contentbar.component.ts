@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { LoginService } from '../login.service';
 import { Chart,registerables } from 'chart.js';
 import { Router } from '@angular/router';
-import jwtDecode from 'jwt-decode';
 Chart.register(...registerables);
 
 @Component({
@@ -11,7 +10,7 @@ Chart.register(...registerables);
   styleUrls: ['./contentbar.component.css']
 })
 export class ContentbarComponent {
-  constructor(private loginService:LoginService, private router:Router){}
+  constructor(public loginService:LoginService, private router:Router){}
 
   signout(){
     window.localStorage.setItem("loginflag","false");

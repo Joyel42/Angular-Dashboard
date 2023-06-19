@@ -20,8 +20,13 @@
             <div class="error-fields" *ngIf="password.errors?.['required'] && password.touched">Fill this field!!</div>
             <br>
         </div>
+        <div>
+            <div class="error-fields" style="color: red; padding:0 0 .5rem 2.3rem;" *ngIf="serverresponse.length != 0">
+                {{serverresponse}} !! 
+            </div>
+        </div>
         <div class="login-options">
-            <span><input type="radio"> Remember me</span>
+            <span><input type="checkbox"> Remember me</span>
             <span style="color: black;">Forgot password?</span>
         </div>
         <div>

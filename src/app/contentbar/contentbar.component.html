@@ -1,5 +1,5 @@
 <div class="mainbar">
-    <div class="profile-settings" id="profile-setting">
+    <div class="profile-settings" id="profile-setting" *ngIf="!loginService.settingsopened" >
         <div class="head">
             <span>
                 <img class="profile-img-display" src="assets/avatar.png" style="border-radius: 10rem; width: 1.4rem; height: 1.4rem;">
