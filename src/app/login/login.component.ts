@@ -40,6 +40,7 @@ export class LoginComponent  {
         this.router.navigate(['/dashboard']);
       }
       this.loginservice.decodedjwt(data.results);
+      console.log("Hello Team")
     }, 
     error =>{
       this.serverresponse = error.statusText;
